@@ -7,8 +7,8 @@ from rest_framework.response import Response
 
 @api_view(['GET'])
 def userInfo(request):
-    user_info = UserInfo.objects.all()
-    serializer = UserInfoSerializer(user_info, many=True)
+    user_info = UserInfo.objects.get(id=1)
+    serializer = UserInfoSerializer(user_info, many=False)
     return Response(serializer.data)
     
     
